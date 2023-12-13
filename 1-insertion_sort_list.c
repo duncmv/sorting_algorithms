@@ -30,7 +30,7 @@ void swap_nodes(listint_t **list, listint_t *curr, listint_t *prev)
 */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *curr = (*list)->next;
+	listint_t *curr;
 	listint_t *prev = *list;
 	int i = 0;
 	listint_t *stop;
@@ -39,6 +39,7 @@ void insertion_sort_list(listint_t **list)
 	if (*list == NULL || (*list)->next == NULL)
 		return;
 
+	curr = (*list)->next;
 	while (curr != NULL)
 	{
 		i = 0; /*tracks position of first swap in each iteration*/
