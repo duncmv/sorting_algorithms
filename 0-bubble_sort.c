@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include "sort.h"
 
+/**
+ * bubble_sort - function
+ * @array : Unsorted array
+ * @size : size of array
+ */
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
