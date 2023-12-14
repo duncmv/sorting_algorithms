@@ -24,7 +24,7 @@ void bubble_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 size_t lomuto_par(int *array, size_t size, int small, int high);
 void quick_sort(int *array, size_t size);
-void qs(int *array, size_t size, int small, int high)
+void qs(int *array, size_t size, int small, int high);
 void swap(int *array, int *nb1, int *nb2, size_t size);
 
 #endif /* SORT_H */
