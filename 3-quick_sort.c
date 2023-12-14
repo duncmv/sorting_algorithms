@@ -3,6 +3,7 @@
 /**
  * swap - function
  * @array : unsorted array
+ * @size : size of array
  * @nb1 : number 1
  * @nb2 : number 2
  */
@@ -14,13 +15,15 @@ void swap(int *array, int *nb1, int *nb2, size_t size)
 	array[nb1] = array[nb2];
 	array[nb2] = temp;
 	print_array(array, size);
+}
 
 /**
  * lomuto_par - function
  * @array : array to partitioned
  * @small : small index
+ * @size : size of array
  * @high : high index
- * Return : size_t
+ * Return: size_ti
  */
 size_t lomuto_par(int *array, size_t size, int small, int high)
 {
