@@ -10,9 +10,9 @@ void swap(int *array, int *nb1, int *nb2, size_t size)
 {
 	int temp;
 
-	temp = array[nb1];
-	array[nb1] = array[nb2];
-	array[nb2] = temp;
+	temp = array[*nb1];
+	array[*nb1] = array[*nb2];
+	array[*nb2] = temp;
 	print_array(array, size);
 }
 
@@ -22,25 +22,25 @@ void swap(int *array, int *nb1, int *nb2, size_t size)
  * @small : small index
  * @size : size of array
  * @high : high index
- * Return: size_ti
+ * Return: index
  */
-size_t lomuto_par(int *array, size_t size, int small, int high)
+int lomuto_par(int *array, size_t size, int small, int high)
 {
 	int i, j, pivot;
 
 	pivot = array[high];
 	i = small;
-	for (j = small; j <= high; j++)
+	for (j = small; j <= high - 1; j++)
 	{
 		if (array[j] < pivot)
 		{
 			if (j > i)
-				swap(array, i, j, size);
+				swap(array, &i, &j, size);
 			i++;
 		}
 	}
 	if (array[i] > pivot)
-		swap(array, i, high, size);
+		swap(array, &i, &high, size);
 	return (i);
 }
 /**
@@ -56,7 +56,7 @@ void qs(int *array, size_t size, int small, int high)
 
 	if (small < high)
 	{
-		par = lomuto_par(array, small, high, size);
+		par = lomuto_par(array, size, small, high);
 		qs(array, size, small, par - 1);
 		qs(array, size, par + 1, high);
 	}
