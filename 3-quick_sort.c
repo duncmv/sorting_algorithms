@@ -1,5 +1,4 @@
 #include "sort.h"
-
 /**
  * swap - function
  * @array : unsorted array
