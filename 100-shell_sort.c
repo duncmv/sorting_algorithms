@@ -22,7 +22,7 @@ void switx(int *nb1, int *nb2)
 void shell_sort(int *array, size_t size)
 {
 	size_t gap = 1, i, j;
-	
+
 	if (!array || size < 2)
 		return;
 
@@ -33,7 +33,7 @@ void shell_sort(int *array, size_t size)
 	{
 		for (i = 0; i < gap; i++)
 		{
-			for (j = i; j < size - gap; j+= gap)
+			for (j = i; j < size - gap; j += gap)
 			{
 				while (array[j] > array[j + gap])
 				{
@@ -42,7 +42,6 @@ void shell_sort(int *array, size_t size)
 						j -= gap;
 					else
 						break;
-		
 				}
 			}
 		}
