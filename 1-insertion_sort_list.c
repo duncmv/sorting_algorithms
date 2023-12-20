@@ -38,7 +38,8 @@ void insertion_sort_list(listint_t **list)
 	/*case when the list is empty or has one node*/
 	if (*list == NULL || (*list)->next == NULL)
 		return;
-
+	if (list == NULL)
+		return;
 	curr = (*list)->next;
 	while (curr != NULL)
 	{
