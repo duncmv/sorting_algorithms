@@ -36,10 +36,9 @@ void insertion_sort_list(listint_t **list)
 	listint_t *stop;
 
 	/*case when the list is empty or has one node*/
-	if (*list == NULL || (*list)->next == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
-	if (list == NULL)
-		return;
+	
 	curr = (*list)->next;
 	while (curr != NULL)
 	{
